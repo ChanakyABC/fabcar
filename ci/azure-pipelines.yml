@@ -1,0 +1,32 @@
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+trigger:
+  - master
+  - release-1.4
+
+variables:
+  FABRIC_VERSION: 2.0
+  NODE_VER: 12.x
+  PATH: $(Build.Repository.LocalPath)/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+
+
+
+
+  - job: FabCar_JavaScript
+    displayName: FabCar (JavaScript)
+    pool:
+      vmImage: ubuntu-18.04
+    steps:
+      - template: templates/install-deps.yml
+      - template: templates/fabcar/azure-pipelines-javascript.yml
+
+
+  - job: TestNetwork
+    displayName: Test Network
+    pool:
+      vmImage: ubuntu-18.04
+    steps:
+      - template: templates/install-deps.yml
+      - template: templates/test-network/azure-pipelines.yml
