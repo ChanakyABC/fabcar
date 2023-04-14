@@ -25,41 +25,42 @@ cd fabcar
 ```
 
 
-Remove any previously created docker containers.
+3. Remove any previously created docker containers.
 ```bash
 docker rm -f $(docker ps -aq)
 ```
 
-Prune the network if any before setting up the network.
+4. Prune the network if any before setting up the network.
 ```bash
 docker network prune
 ```
 
-Install all the dependencies.
+5. Install all the dependencies.
 ```bash
 npm install
 ```
 
-Run the fabric script file startFabric.sh
+6. Run the fabric script file startFabric.sh
 ```bash
 ./startFabric.sh
 ```
 
-Before interacting with the fabric, we need an Admin and a user credential.  
+7. Before interacting with the fabric, we need an Admin and user credentials.
+Creating Admin certificates  
 ```bash
 node enrollAdmin.js
 ```
-
+8. Creating User certificates
 ```bash
 node registerUser.js
 ```
 
-Run the query file to interact with the fabric using chaincode and make a get request to the fabric.
+9. Run the query file to interact with the fabric using chaincode and make a get request to the fabric.
 ```bash
 node query.js
 ```
 
-Run the invoke file to interact with the fabric using chaincode and make a Post or Update request to the fabric.
+10. Run the invoke file to interact with the fabric using chaincode and make a Post or Update request to the fabric.
 ```bash
 node invoke.js
 ```
