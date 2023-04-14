@@ -7,7 +7,9 @@
 [Hyperledger Fabric Setup Guide](https://docs.google.com/document/d/1lzuE5PiHIlOaTt2r2b-lXiug1euvBgzpnzFkRbyPYrk/edit?usp=sharing)
 
 ### 2. Clone the FABCAR repo from the given link :
+```bash
 https://github.com/ChanakyABC/fabcar.git
+```
 
 
 
